@@ -35,9 +35,11 @@ function searchCoffee() {
     a = coffees[0];
     txtValue = a.textContent || a.innerText;
     for (a = 0; a < coffees.length; i++) {
+       coffees.id[i]
         txtValue = a.textContent || a.innerText;
         if (txtValue.indexOf(filter) > -1) {
             coffees[i].style.display = "";
+
         } else {
             coffees[i].style.display = "none";
         }
