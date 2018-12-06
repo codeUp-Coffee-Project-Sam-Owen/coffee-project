@@ -10,7 +10,7 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = 0; i < coffees.length; i++) {
+    for (var i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -20,7 +20,7 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
+    coffees.forEach(function (coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
@@ -29,22 +29,19 @@ function updateCoffees(e) {
 }
 
 function searchCoffee() {
-  var input, filter,a,txtValue;
-  input = document.getElementById('coffeNameInput');
-  filter = input.value;
-  a = coffees[i];
-  txtValue = a.textContent || a.innerText;
-  for (i=0; i<coffees.length; i++){
-    coffee[i].coffee.id[0];
+    var input, filter, a, txtValue;
+    input = document.getElementById('coffeNameInput');
+    filter = input.value;
+    a = coffees[0];
     txtValue = a.textContent || a.innerText;
-    if (txtValue.indexOf(filter) > -1){
-      coffees[i].style.display = "";
-
-    }else{
-      coffees[i].style.display = "none";
+    for (a = 0; a < coffees.length; i++) {
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.indexOf(filter) > -1) {
+            coffees[i].style.display = "";
+        } else {
+            coffees[i].style.display = "none";
+        }
     }
-}
-
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -64,11 +61,8 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'}
 ];
-
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-
 tbody.innerHTML = renderCoffees(coffees);
-
 submitButton.addEventListener('click', updateCoffees);
