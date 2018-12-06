@@ -7,3 +7,14 @@ td, th {
     border: 1px solid black;
     padding: 5px 10px;
 }
+ #header{
+   text-align: center;
+ }
+ .content{
+   float: right;
+ }
+
+ #submit{
+   background-color: #00ABA9;
+   width: 200px;
+ }
