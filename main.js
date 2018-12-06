@@ -10,7 +10,7 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    for(var i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -26,6 +26,25 @@ function updateCoffees(e) {
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
+}
+
+function searchCoffee() {
+  var input, filter,a,txtValue;
+  input = document.getElementById('coffeNameInput');
+  filter = input.value;
+  a = coffees[i];
+  txtValue = a.textContent || a.innerText;
+  for (i=0; i<coffees.length; i++){
+    coffee[i].coffee.id[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.indexOf(filter) > -1){
+      coffees[i].style.display = "";
+
+    }else{
+      coffees[i].style.display = "none";
+    }
+}
+
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
